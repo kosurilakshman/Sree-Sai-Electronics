@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState,useEffect } from 'react';
-import axios from 'axios'
+import { createContext, useState } from 'react';
+
 import products from '../src/data/product.json'
 
 export const shopContext = createContext();
