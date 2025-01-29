@@ -17,9 +17,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeDropdown = () => {
-    setIsOpen(false);
-  };
+
 
   return (
     <>
@@ -39,7 +37,7 @@ const Navbar = () => {
             </li>
 
             <li className="relative"
-                onMouseLeave={closeDropdown}  // Close dropdown when mouse leaves
+            
             >
               <Link 
                 to="#" 
