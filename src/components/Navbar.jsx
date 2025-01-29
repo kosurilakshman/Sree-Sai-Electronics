@@ -14,10 +14,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen); // Toggle the dropdown open/close on click
   };
 
-
+  const closeDropdown = () => {
+    setIsOpen(false); // Close the dropdown when the mouse leaves
+  };
 
   return (
     <>
@@ -36,18 +38,22 @@ const Navbar = () => {
               <Link to="/" className="text-gray-800 hover:text-blue-500 transition-colors duration-300">Home</Link>
             </li>
 
-            <li className="relative"
-            
+            <li
+              className="relative"
             >
-              <Link 
-                to="#" 
-                onClick={toggleDropdown} 
+              <Link
+                to="#"
+                onClick={toggleDropdown}
                 className="text-gray-800 hover:text-blue-500 transition-colors duration-300"
               >
                 Services
               </Link>
+
               {isOpen && (
-                <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+                <ul
+                  className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10"
+                  onMouseLeave={closeDropdown} // Close the dropdown when mouse leaves the dropdown
+                >
                   {categories.map((category) => (
                     <li key={category.path}>
                       <Link
